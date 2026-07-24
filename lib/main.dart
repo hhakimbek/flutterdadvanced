@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'gestures/word_merge_game.dart';
 import 'typography/task1/login_screen_tp.dart';
 import 'typography/task2/onboarding_screen.dart';
 
@@ -55,6 +56,17 @@ class HomeMenu extends StatelessWidget {
                   MaterialPageRoute(builder: (_) => const OnboardingScreen()),
                 ),
                 child: const Text('Task 2 — Tolki (SMS autofill)'),
+              ),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              height: 56,
+              child: ElevatedButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const WordMergeGame()),
+                ),
+                child: const Text('Task 3 — Merge Words (drag & drop)'),
               ),
             ),
           ],
