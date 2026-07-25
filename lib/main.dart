@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdadvanced/custom_painter/shapes_gallery.dart';
+import 'package:flutterdadvanced/custom_painter/test_painter.dart';
 
 import 'gestures/word_merge_game.dart';
 import 'slivers/furniture_screen.dart';
@@ -91,6 +93,28 @@ class HomeMenu extends StatelessWidget {
                   MaterialPageRoute(builder: (_) => const FurnitureScreen()),
                 ),
                 child: const Text('Task 5 — Furniture (slivers)'),
+              ),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              height: 56,
+              child: ElevatedButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const TestPainter()),
+                ),
+                child: const Text('Task 6 — Painter'),
+              ),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              height: 56,
+              child: ElevatedButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const ShapesGallery()),
+                ),
+                child: const Text('Task 7 — Shakllar (CustomPainter)'),
               ),
             ),
           ],
