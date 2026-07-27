@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdadvanced/animations/test_anim.dart';
 import 'package:flutterdadvanced/custom_painter/shapes_gallery.dart';
 import 'package:flutterdadvanced/custom_painter/test_painter.dart';
 
@@ -115,6 +116,17 @@ class HomeMenu extends StatelessWidget {
                   MaterialPageRoute(builder: (_) => const ShapesGallery()),
                 ),
                 child: const Text('Task 7 — Shakllar (CustomPainter)'),
+              ),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              height: 56,
+              child: ElevatedButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const TestAnim()),
+                ),
+                child: const Text('Animation — TEST'),
               ),
             ),
           ],
