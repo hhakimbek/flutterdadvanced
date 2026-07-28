@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdadvanced/animations/task1_animation.dart';
 import 'package:flutterdadvanced/animations/test_anim.dart';
 import 'package:flutterdadvanced/custom_painter/shapes_gallery.dart';
 import 'package:flutterdadvanced/custom_painter/test_painter.dart';
@@ -124,9 +125,9 @@ class HomeMenu extends StatelessWidget {
               height: 56,
               child: ElevatedButton(
                 onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const TestAnim()),
+                  MaterialPageRoute(builder: (_) => const Task1Animation()),
                 ),
-                child: const Text('Animation — TEST'),
+                child: const Text('Animation — TASK 1'),
               ),
             ),
           ],
