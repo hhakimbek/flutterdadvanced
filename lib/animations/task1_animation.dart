@@ -48,7 +48,7 @@ class _Task1AnimationState extends State<Task1Animation> with TickerProviderStat
             buildInImplictAnim(),
             customImplictAnim(),
             buildInExplict(),
-            customInExplict()
+            customInExplict(),
           ],
         )
       ),
