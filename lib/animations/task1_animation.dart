@@ -7,32 +7,48 @@ class Task1Animation extends StatefulWidget {
   State<Task1Animation> createState() => _Task1AnimationState();
 }
 
-class _Task1AnimationState extends State<Task1Animation>
-    with TickerProviderStateMixin {
+class _Task1AnimationState extends State<Task1Animation> with TickerProviderStateMixin {
   bool up = false;
-
   late AnimationController customAnimCtrl;
-
+  late AnimationController buildInExplictCtrl;
+  late CurvedAnimation buildInExplictCurveCtrl;
+  late Animation<AlignmentGeometry> buildInExplictAnim;
   @override
   void initState() {
     customAnimCtrl = AnimationController(vsync: this);
+
+    buildInExplictCtrl = AnimationController(vsync: this,duration: Duration(milliseconds: 900),);
+    buildInExplictCtrl.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        buildInExplictCtrl.reverse();
+      }
+    });
+    buildInExplictCurveCtrl = CurvedAnimation(parent: buildInExplictCtrl, curve: Curves.decelerate);
+    buildInExplictAnim = AlignmentTween(begin: Alignment.bottomCenter,end: Alignment.topCenter).animate(buildInExplictCurveCtrl);
+
     super.initState();
   }
 
   @override
   void dispose() {
     customAnimCtrl.dispose();
+    buildInExplictCtrl.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("SALOM"),
+      ),
       body: SafeArea(
         child: Row(
           children: [
             buildInImplictAnim(),
             customImplictAnim(),
+            buildInExplict(),
+            customInExplict()
           ],
         )
       ),
@@ -40,6 +56,7 @@ class _Task1AnimationState extends State<Task1Animation>
         onPressed: () {
           setState(() {
             up = true;
+            buildInExplictCtrl.forward();
           });
         },
       ),
@@ -84,5 +101,47 @@ class _Task1AnimationState extends State<Task1Animation>
     );
   }
 
+  Widget buildInExplict() {
+    return AlignTransition(
+      alignment: buildInExplictAnim,
+      child: ballWidget(),
+    );
+  }
+
   Widget ballWidget() => Image.asset('assets/images/ball.png', width: 100);
+
+  Widget customInExplict() {
+    return AnimatedBuilderBall(
+      animation: buildInExplictAnim,
+      child: ballWidget(),
+    );
+  }
+
+}
+
+
+class AnimatedBuilderBall extends StatelessWidget {
+  // Bu yerda Alignment o'rniga AlignmentGeometry deb o'zgartiring
+  final Animation<AlignmentGeometry> animation;
+  final Widget child;
+
+  const AnimatedBuilderBall({
+    super.key,
+    required this.animation,
+    required this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: animation,
+      child: child,
+      builder: (context, child) {
+        return Align(
+          alignment: animation.value,
+          child: child,
+        );
+      },
+    );
+  }
 }
