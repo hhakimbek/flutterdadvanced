@@ -4,6 +4,7 @@ import 'package:flutterdadvanced/animations/test_anim.dart';
 import 'package:flutterdadvanced/custom_painter/shapes_gallery.dart';
 import 'package:flutterdadvanced/custom_painter/test_painter.dart';
 
+import 'animations/task2_animation.dart';
 import 'gestures/word_merge_game.dart';
 import 'slivers/furniture_screen.dart';
 import 'slivers/task_screen.dart';
@@ -40,108 +41,110 @@ class HomeMenu extends StatelessWidget {
       appBar: AppBar(title: const Text('Typography Tasks')),
       body: Padding(
         padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: double.infinity,
-              height: 56,
-              child: ElevatedButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const LoginScreenTp()),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const LoginScreenTp()),
+                  ),
+                  child: const Text('Task 1 — Create account'),
                 ),
-                child: const Text('Task 1 — Create account'),
               ),
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              height: 56,
-              child: ElevatedButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const OnboardingScreen()),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const OnboardingScreen()),
+                  ),
+                  child: const Text('Task 2 — Tolki (SMS autofill)'),
                 ),
-                child: const Text('Task 2 — Tolki (SMS autofill)'),
               ),
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              height: 56,
-              child: ElevatedButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const WordMergeGame()),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const WordMergeGame()),
+                  ),
+                  child: const Text('Task 3 — Merge Words (drag & drop)'),
                 ),
-                child: const Text('Task 3 — Merge Words (drag & drop)'),
               ),
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              height: 56,
-              child: ElevatedButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const TaskScreen()),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const TaskScreen()),
+                  ),
+                  child: const Text('Task 4 — Tasks (super_sliver_list)'),
                 ),
-                child: const Text('Task 4 — Tasks (super_sliver_list)'),
               ),
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              height: 56,
-              child: ElevatedButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const FurnitureScreen()),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const FurnitureScreen()),
+                  ),
+                  child: const Text('Task 5 — Furniture (slivers)'),
                 ),
-                child: const Text('Task 5 — Furniture (slivers)'),
               ),
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              height: 56,
-              child: ElevatedButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const TestPainter()),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const TestPainter()),
+                  ),
+                  child: const Text('Task 6 — Painter'),
                 ),
-                child: const Text('Task 6 — Painter'),
               ),
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              height: 56,
-              child: ElevatedButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const ShapesGallery()),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const ShapesGallery()),
+                  ),
+                  child: const Text('Task 7 — Shakllar (CustomPainter)'),
                 ),
-                child: const Text('Task 7 — Shakllar (CustomPainter)'),
               ),
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              height: 56,
-              child: ElevatedButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const Task1Animation()),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const Task1Animation()),
+                  ),
+                  child: const Text('Animation — TASK 1'),
                 ),
-                child: const Text('Animation — TASK 1'),
               ),
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              height: 56,
-              child: ElevatedButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const Task1Animation()),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const Task2Anim()),
+                  ),
+                  child: const Text('Animation — TASK 2'),
                 ),
-                child: const Text('Animation — TASK 2'),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
