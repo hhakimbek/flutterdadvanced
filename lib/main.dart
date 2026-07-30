@@ -130,6 +130,17 @@ class HomeMenu extends StatelessWidget {
                 child: const Text('Animation — TASK 1'),
               ),
             ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              height: 56,
+              child: ElevatedButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const Task1Animation()),
+                ),
+                child: const Text('Animation — TASK 2'),
+              ),
+            ),
           ],
         ),
       ),
