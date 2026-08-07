@@ -3,6 +3,7 @@ import 'package:flutterdadvanced/animations/task1_animation.dart';
 import 'package:flutterdadvanced/animations/test_anim.dart';
 import 'package:flutterdadvanced/custom_painter/shapes_gallery.dart';
 import 'package:flutterdadvanced/custom_painter/test_painter.dart';
+import 'package:flutterdadvanced/tests/updated_page.dart';
 
 import 'animations/task2_animation.dart';
 import 'gestures/word_merge_game.dart';
@@ -10,6 +11,7 @@ import 'slivers/furniture_screen.dart';
 import 'slivers/task_screen.dart';
 import 'typography/task1/login_screen_tp.dart';
 import 'typography/task2/onboarding_screen.dart';
+import 'widget_anatomy/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -141,6 +143,28 @@ class HomeMenu extends StatelessWidget {
                     MaterialPageRoute(builder: (_) => const Task2Anim()),
                   ),
                   child: const Text('Animation — TASK 2'),
+                ),
+              ),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const UpdaterPage()),
+                  ),
+                  child: const Text('Yangilanishni tekshirish'),
+                ),
+              ),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const WelcomeScreen()),
+                  ),
+                  child: const Text('Widget Anatomy — Shopin (Welcome & Product)'),
                 ),
               ),
             ],
